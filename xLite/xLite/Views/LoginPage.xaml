@@ -2,17 +2,21 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="xLite.Views.LoginPage">
+    <ContentPage.Resources>
+        <StyleSheet x:Key="StyleSheet" Source= "../Assets/login.css"/>
+    </ContentPage.Resources>
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Sign Up" Clicked="OnSignUpButtonClicked" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout VerticalOptions="StartAndExpand">
-            <Label Text="Username" />
-            <Entry x:Name="usernameEntry" Placeholder="username" />
-            <Label Text="Password" />
-            <Entry x:Name="passwordEntry" IsPassword="true" />
+        <StackLayout VerticalOptions="StartAndExpand" class="login-form" Padding="20,20,20,20">
+            <Label Text="Please enter your credentials!" FontSize="Large" Style=""></Label>
+            <!--<Label Text="Login Email" />-->
+            <Entry x:Name="usernameEntry" Placeholder="Login Email" />
+            <!--<Label Text="Password" />-->
+            <Entry x:Name="passwordEntry" IsPassword="true" Placeholder="Password" />
             <Button Text="Login" Clicked="OnLoginButtonClicked" />
-            <Label x:Name="messageLabel" />
+            <Label x:Name="messageLabel" TextColor="Crimson" HorizontalTextAlignment="Center" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

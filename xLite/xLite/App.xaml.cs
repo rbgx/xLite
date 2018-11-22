@@ -24,6 +24,7 @@ namespace xLite
                 DependencyService.Register<AzureDataStore>();
 
             MainPage = !IsUserLoggedIn ? new NavigationPage(new LoginPage()) : new NavigationPage(new LandingPage());
+            //MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()

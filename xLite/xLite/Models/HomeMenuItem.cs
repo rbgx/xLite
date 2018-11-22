@@ -8,7 +8,8 @@ namespace xLite.Models
     {
         Browse,
         About,
-        Items
+        Items,
+        Login
     }
     public class HomeMenuItem
     {

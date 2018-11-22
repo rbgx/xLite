@@ -3,15 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="xLite.Views.SignUpPage">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="StartAndExpand">
-            <Label Text="Username" />
-            <Entry x:Name="usernameEntry" Placeholder="username" />
+        <StackLayout VerticalOptions="StartAndExpand" Padding="20,20,20,20">
+            <Label Text="Login Email" />
+            <Entry x:Name="usernameEntry" Placeholder="Email Address" />
             <Label Text="Password" />
             <Entry x:Name="passwordEntry" IsPassword="true" />
             <Label Text="Email address" />
             <Entry x:Name="emailEntry" />
             <Button Text="Sign Up" Clicked="OnSignUpButtonClicked" />
-            <Label x:Name="messageLabel" />
+            <Label x:Name="messageLabel" TextColor="Crimson" HorizontalTextAlignment="Center" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
