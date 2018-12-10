@@ -42,7 +42,9 @@ namespace xLite.Views
 
             if (newPage != null && Detail != newPage)
             {
-                Detail = newPage;
+                newPage.CurrentPage.Parent = null;
+                Detail = newPage.CurrentPage;
+                //Detail = newPage.CurrentPage;
 
                 if (Device.RuntimePlatform == Device.Android)
                     await Task.Delay(100);
