@@ -6,7 +6,7 @@ namespace xLite.Models
 {
     public static class Constants
     {
-        public static string Username = "Harsha";
-        public static string Password = "Bopuri";
+        public static string LoginEmail = "hbopuri@smart-structures.com";
+        public static string Password = "Welcome@516";
     }
 }

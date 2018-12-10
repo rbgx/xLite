@@ -1,5 +1,4 @@
 ﻿using xLite.Models;
-using System;
 using System.Collections.Generic;
 
 using Xamarin.Forms;
@@ -8,19 +7,19 @@ using Xamarin.Forms.Xaml;
 namespace xLite.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MenuPage : ContentPage
+    public partial class MenuPage
     {
-        MainPage RootPage { get => Application.Current.MainPage as MainPage; }
-        List<HomeMenuItem> menuItems;
+        MainPage RootPage => (Application.Current.MainPage as NavigationPage)?.CurrentPage as MainPage;
+
         public MenuPage()
         {
             InitializeComponent();
 
-            menuItems = new List<HomeMenuItem>
+            var menuItems = new List<HomeMenuItem>
             {
-                new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
-                new HomeMenuItem {Id = MenuItemType.About, Title="About" },
-                new HomeMenuItem {Id = MenuItemType.Items, Title="Items" }
+                new HomeMenuItem {Id = MenuItemType.Browse, Title = "Browse"},
+                new HomeMenuItem {Id = MenuItemType.About, Title = "About"},
+                new HomeMenuItem {Id = MenuItemType.Items, Title = "Items"}
             };
 
             ListViewMenu.ItemsSource = menuItems;
@@ -31,7 +30,7 @@ namespace xLite.Views
                 if (e.SelectedItem == null)
                     return;
 
-                var id = (int)((HomeMenuItem)e.SelectedItem).Id;
+                var id = (int) ((HomeMenuItem) e.SelectedItem).Id;
                 await RootPage.NavigateFromMenu(id);
             };
         }
